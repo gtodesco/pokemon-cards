@@ -37,10 +37,11 @@ export default new Vuex.Store({
 
       let response = await PokemonService.getByName(name);
 
-      const arrCards = response.data.map(({ id, name, types }) => ({
+      const arrCards = response.data.map(({ id, name, types, images: { small } }) => ({
         id, 
         name, 
-        types
+        types,
+        image: small
       }));
     
       context.commit('setCards', arrCards);
