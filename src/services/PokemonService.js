@@ -4,7 +4,7 @@ class PokemonService {
 
     async getAll() {
         try {
-            const response = await http.get('/cards?orderBy=name');
+            const response = await http.get('/cards?orderBy=name&q=supertype:pokemon');
 
             return response.data;
         } catch (error) {
@@ -24,7 +24,7 @@ class PokemonService {
 
     async getByName(name) {
         try {
-            const response = await http.get(`/cards/?orderBy=name&q=name:*${name}*`);
+            const response = await http.get(`/cards/?orderBy=name&q=supertype:pokemon name:*${name}*`);
 
             return response.data;
         } catch (error) {
