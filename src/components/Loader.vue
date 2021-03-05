@@ -1,11 +1,10 @@
 <template>
-  <div class='loader' v-show="show" />
+  <div class='loader' />
 </template>
 
 <script>
 export default {
-  name: 'Loader',
-  props: ['show'],
+  name: 'Loader'
 }
 </script>
 
