@@ -1,7 +1,7 @@
 <template>
   <div class="search">
     <input 
-      id="search-field"
+      id="search-input"
       v-model="search" 
       placeholder="Search Pokémon" 
       @keypress.enter="searchPokemon"/>
@@ -34,9 +34,10 @@ export default {
 .search {
   display: flex;
   height: 3rem;
+  width: 100%;
 }
 
-#search-field {
+#search-input {
   width: 100%;
   box-shadow: 0px 2px 7px grey;
   border-top-left-radius: 10px;
@@ -44,6 +45,11 @@ export default {
   border-right: none;
   padding: 10px;
   border: 1px solid #707070;
+}
+
+#search-input:focus {
+  outline: none;
+  border-color: #ff0000;
 }
 
 #search-button {
@@ -55,6 +61,10 @@ export default {
   border-bottom-right-radius: 10px;
   border-left: none;
   border: 1px solid #707070;
+}
+
+#search-button:focus {
+  outline: none;
 }
 
 #search-button:hover {
