@@ -1,34 +1,21 @@
 <template>
-  <div>
+  <div class="content">
+    <div id="search-container" class="search-container">
       <PokemonSearch />
-      <div class='content'>
-        <div class='div-loader' v-show="isLoading">
-          <Loader />
-        </div>
-        <div class='cards' v-show="!isLoading">
-          <transition-group
-            class='carousel'
-            tag="div">
-            <div
-              v-for="card in cards"
-              :key="card.id"
-              class='carousel-item'>
-              <PokemonCard :pokemon="card"/>
-            </div>
-          </transition-group>
-          <div class='carousel-controls'>
-            <button class='carousel-controls__button' @click="previous">prev</button>
-            <button class='carousel-controls__button' @click="next">next</button>
-          </div>
-        </div>
-      </div>
     </div>
+    <div id="text-container" class="page-container" v-show="!isLoading && !hasCards">
+      <h1>Welcome to Pokestore!</h1>
+      <p>Search for a Pokémon in the input above.</p>
+    </div>
+    <div id="loader-container" class="page-container" v-show="isLoading">
+      <Loader />
+    </div>
+  </div>
 </template>
 
 <script>
 import PokemonSearch from '../components/PokemonSearch'
 import Loader from '../components/Loader'
-import PokemonCard from '../components/PokemonCard'
 import { mapGetters } from 'vuex'
 
 export default {
@@ -36,66 +23,35 @@ export default {
   components: {
     PokemonSearch,
     Loader,
-    PokemonCard
   },
   computed: mapGetters({
-    cards: 'cards',
+    hasCards: 'hasCards',
     isLoading: 'isLoading'
   }),
   data () {
     return {}
   },
-
-  methods: {
-    next () {
-      const first = this.cards.shift()
-      this.$store.dispatch('updateCards', this.cards.concat(first));
-    },
-    previous () {
-      const last = this.cards.pop()
-      this.$store.dispatch('updateCards', [last].concat(this.cards));
-    },
-  }
 }
 </script>
 
 <style>
 .content {
   display: flex;
-  align-items: center;
   justify-content: center;
 }
 
-.div-loader {
-  margin-top: 5rem;
+.search-container {
+  position: absolute;
+  width: 90%;
 }
 
-.cards {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
+.page-container {
+  position: absolute;
+  top: 15vh;
 }
 
-.carousel {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-  
-  width: 24em;
-  min-height: 25em;
-}
-
-.carousel-item {
-  flex: 0 0 20em;
-  transition: transform 0.3s ease-in-out;
-}
-
-.carousel-item:first-of-type {
-  opacity: 0;
-}
-
-.carousel-item:last-of-type {
-  opacity: 0;
+#text-container {
+  font: italic small-caps 20px/30px fantasy;
+  color: #1d1d1d
 }
 </style>
