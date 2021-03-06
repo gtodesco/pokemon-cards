@@ -16,6 +16,9 @@ export default new Vuex.Store({
     cards(state) {
       return state.cards;
     },
+    hasCards(state) {
+      return state.cards.length > 0 ? true : false;
+    },
     isLoading(state) {
       return state.isLoading;
     }
