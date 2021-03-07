@@ -88,7 +88,7 @@
   display: flex;
   border-bottom: solid;
   justify-content: space-between;
-  font: italic small-caps 25px/20px Copperplate, Papyrus, fantasy;
+  font: italic small-caps 25px/20px Papyrus, fantasy;
   color: #1d1d1d;
 }
 
