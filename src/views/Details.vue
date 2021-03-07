@@ -142,12 +142,12 @@ export default {
 }
 
 .small-text {
-  font: 12px/0px Impact, fantasy;
+  font: 12px/0px Copperplate, Papyrus, fantasy;
   color: #1d1d1d;
 }
 
 .large-text {
-  font: italic small-caps 25px/20px Impact, fantasy;
+  font: italic small-caps 25px/20px Copperplate, Papyrus, fantasy;
   color: #1d1d1d;
 }
 
