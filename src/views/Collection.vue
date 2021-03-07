@@ -7,6 +7,7 @@
       <article>
         <h1>Welcome to Pokestore!</h1>
         <p>Search for a Pokémon in the input above.</p>
+        <h5>{{ $t('CODES.internacionalization_test') }}</h5>
       </article>
     </div>
     <div id="loader-container" class="page-container" v-show="isLoading">
