@@ -79,7 +79,7 @@ export default {
 }
 
 #text-container {
-  font: italic small-caps 20px/30px fantasy;
+  font: italic small-caps 20px/30px Impact, fantasy;
   color: #1d1d1d
 }
 
@@ -107,7 +107,7 @@ export default {
 
 .card-text {
   margin: 2%;
-  font: italic small-caps 20px/30px fantasy;;
+  font: italic small-caps 20px/30px Impact, fantasy;
 }
 
 @media only screen and (max-width: 768px) {

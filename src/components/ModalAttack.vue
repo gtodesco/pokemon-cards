@@ -88,7 +88,7 @@
   display: flex;
   border-bottom: solid;
   justify-content: space-between;
-  font: italic small-caps 25px/20px fantasy;
+  font: italic small-caps 25px/20px Impact, fantasy;
   color: #1d1d1d;
 }
 
