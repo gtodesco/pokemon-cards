@@ -1,6 +1,7 @@
 html, body {
   overflow: hidden;
 }
+
 body {
   background-image: url(background.png);
   background-position: center;
@@ -19,5 +20,11 @@ body {
   ::-webkit-scrollbar-thumb {
     background-color: #ff0000;
     border-radius: 20px;
+  }
+}
+
+@media only screen and (min-height: 711px) and (max-width: 769px) {
+  body {
+    background-position: unset;
   }
 }
