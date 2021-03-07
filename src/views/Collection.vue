@@ -62,7 +62,22 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+@mixin card-list {
+  overflow: auto;
+  max-height: 80vh;
+  width: 90vw;
+}
+
+@mixin text {
+  font-style: italic;
+  font-variant: small-caps;
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  font-size: 20px;
+  line-height: 30px;
+  color: #1d1d1d;
+}
+
 .content {
   display: flex;
   justify-content: center;
@@ -80,14 +95,11 @@ export default {
 }
 
 #text-container {
-  font: italic small-caps 20px/30px Verdana, sans-serif;
-  color: #1d1d1d
+  @include text;
 }
 
 #cards-container {
-  overflow: auto;
-  max-height: 80vh;
-  width: 90vw;
+  @include card-list;
   display: grid;
   grid-gap: 35px;
   grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
@@ -108,7 +120,7 @@ export default {
 
 .card-text {
   margin: 2%;
-  font: italic small-caps 20px/30px Verdana, sans-serif;
+  @include text;
 }
 
 @media only screen and (max-width: 768px) {
@@ -117,9 +129,7 @@ export default {
   }
 
   #cards-container {
-    overflow: auto;
-    max-height: 80vh;
-    width: 90vw;
+    @include card-list;
     display: flex;
     grid-gap: 35px;
   }
