@@ -6,8 +6,7 @@
       placeholder="Search Pokémon" 
       @keypress.enter="searchPokemon"/>
       <button 
-        id="search-button" 
-        class="btn" 
+        id="search-button"
         @click="searchPokemon">
         <i class="fa fa-search"></i>
       </button>
