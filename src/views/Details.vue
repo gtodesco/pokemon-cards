@@ -89,7 +89,14 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
+$shadow: 5px 5px 7px grey;
+
+@mixin text {
+  font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
+  color: #1d1d1d;
+}
+
 .details-content {
   display: flex;
   justify-content: center;
@@ -129,26 +136,30 @@ export default {
 #image-card img {
   max-width: 20em;
   background-color: #ffffff;
-  box-shadow: 5px 5px 7px grey;
+  box-shadow: $shadow;
   border: none;
 }
 
 .detail-card {
   background-color: #ffffff;
-  box-shadow: 5px 5px 7px grey;
+  box-shadow: $shadow;
   border: solid;
   text-align: center;
   margin-top: 20px;
 }
 
 .small-text {
-  font: 12px/0px Verdana, sans-serif;
-  color: #1d1d1d;
+  @include text;
+  font-size: 12px;
+  line-height: 0px;
 }
 
 .large-text {
-  font: italic small-caps 25px/20px Verdana, sans-serif;
-  color: #1d1d1d;
+  @include text;
+  font-style: italic;
+  font-variant: small-caps;
+  font-size: 25px;
+  line-height: 20px;
 }
 
 .chip {
@@ -160,7 +171,7 @@ export default {
   border-radius: 9999px;
   padding: 10px 8px;
   margin: 2px;
-  font: 12px/0px cursive;
+  font: 12px/0px Verdana, sans-serif;
 }
 
 .attributes {
