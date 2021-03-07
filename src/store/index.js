@@ -9,7 +9,7 @@ export default new Vuex.Store({
   state: {
     cards: [],
     isLoading: false,
-    cardSelected: null
+    cardSelected: {}
   },
 
   getters: {
@@ -21,15 +21,21 @@ export default new Vuex.Store({
     },
     isLoading(state) {
       return state.isLoading;
+    },
+    cardSelected(state) {
+      return state.cardSelected;
     }
   },
 
   mutations: {
+    setCards(state, cards) {
+      state.cards = cards;
+    },
     setIsLoading(state, isLoading) {
       state.isLoading = isLoading;
     },
-    setCards(state, cards) {
-      state.cards = cards;
+    setCardSelected(state, card) {
+      state.cardSelected = card;
     }
   },
 
@@ -38,7 +44,7 @@ export default new Vuex.Store({
 
       context.commit('setIsLoading', true);
 
-      let response = await PokemonService.getByName(name);
+      const response = await PokemonService.getByName(name);
 
       const arrCards = response.data.map(({ id, name, types, images: { small } }) => ({
         id, 
@@ -53,9 +59,34 @@ export default new Vuex.Store({
 
     },
 
-    updateCards(context, cards) {
-      context.commit('setCards', cards);
+    async searchCardById(context, idCard) {
+      context.commit('setIsLoading', true);
+
+      const response = await PokemonService.getById(idCard);
+
+      const { 
+        id, 
+        name, 
+        types, 
+        resistances, 
+        weaknesses, 
+        attacks, 
+        images: { large } } = response.data;
+
+      context.commit('setCardSelected', {
+        id, 
+        name, 
+        types, 
+        resistances, 
+        weaknesses, 
+        attacks,
+        image: large
+      });
+
+      context.commit('setIsLoading', false);
+
     }
+
   },
 
 })

@@ -13,10 +13,15 @@
       <Loader />
     </div>
     <div id="cards-container" class="page-container" v-show="!isLoading && hasCards">
-      <article class="card" v-for="card in cards" :key="card.id" @click="alert">
+      <article 
+        class="card" 
+        v-for="card in cards" 
+        :key="card.id" 
+        @click="goToDetails(card.id)"
+      >
         <h4 class="card-text">{{card.name}}</h4>
         <picture>
-          <img :src="card.image" alt="Pokémon" style="width: 150px;">
+          <img class="card-picture" :src="card.image" alt="Pokémon">
         </picture>
         <p class="card-text" v-for="type in card.types" :key="type">
           {{type}}
@@ -47,8 +52,11 @@ export default {
     return {}
   },
   methods: {
-    alert() {
-      alert('teste');
+    goToDetails(id) {
+      this.$router.push({
+        name: 'details',
+        params: { id },
+      });
     }
   }
 }
@@ -91,6 +99,10 @@ export default {
   width: 150px;
   cursor: pointer;
   text-align: center;
+}
+
+.card-picture {
+  width: 150px;
 }
 
 .card-text {
