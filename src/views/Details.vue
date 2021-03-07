@@ -37,7 +37,7 @@
       </div>
       <div id="attack-card" class="detail-card">
         <h2 class="large-text">Attacks</h2>
-        <div class="attributes" v-for="attack in card.attacks" :key="attack">
+        <div class="attributes attack" v-for="attack in card.attacks" :key="attack">
           <h5 class="small-text">{{ attack.name }}</h5>
           <h3 class="chip" v-for="cost in attack.cost" :key="cost">
             {{ cost }}
@@ -98,7 +98,6 @@ export default {
   overflow: auto;
   max-height: 80vh;
   width: 90vw;
-  cursor: pointer;
 }
 
 #image-card {
@@ -144,6 +143,15 @@ export default {
 
 .attributes {
   border-top: solid;
+}
+
+.attack {
+  background-color: wheat;
+}
+
+.attack:hover {
+  cursor: pointer;
+  background-color: tomato;
 }
 
 @media only screen and (min-width: 769px) {
