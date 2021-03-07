@@ -5,16 +5,19 @@ body {
   background-image: url(background.png);
   background-position: center;
 }
-::-webkit-scrollbar {
-  width: 6px;               /* width of the entire scrollbar */
-}
 
-::-webkit-scrollbar-track {
-  background: #ffffff;   
-  border-radius: 20px;     /* color of the tracking area */
-}
-
-::-webkit-scrollbar-thumb {
-  background-color: #ff0000;    /* color of the scroll thumb */
-  border-radius: 20px;       /* roundness of the scroll thumb */
+@media only screen and (min-width: 769px) {
+  ::-webkit-scrollbar {
+    width: 6px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: #ffffff;   
+    border-radius: 20px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background-color: #ff0000;
+    border-radius: 20px;
+  }
 }

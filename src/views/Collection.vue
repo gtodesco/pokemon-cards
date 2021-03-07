@@ -67,7 +67,7 @@ export default {
 
 .page-container {
   position: absolute;
-  top: 12vh;
+  top: 15vh;
 }
 
 #text-container {
@@ -96,5 +96,19 @@ export default {
 .card-text {
   margin: 2%;
   font: italic small-caps 20px/30px fantasy;;
+}
+
+@media only screen and (max-width: 768px) {
+  .page-container {
+    top: 22vh;
+  }
+
+  #cards-container {
+    overflow: auto;
+    max-height: 80vh;
+    width: 90vw;
+    display: flex;
+    grid-gap: 35px;
+  }
 }
 </style>
