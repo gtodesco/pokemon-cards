@@ -61,7 +61,7 @@
   };
 </script>
 
-<style>
+<style lang="scss">
 .modal-backdrop {
   position: fixed;
   top: 0;
@@ -88,7 +88,11 @@
   display: flex;
   border-bottom: solid;
   justify-content: space-between;
-  font: italic small-caps 25px/20px Verdana, sans-serif;
+  font-size: 25px;
+  line-height: 20px;
+  font-family: Verdana, sans-serif;
+  font-style: italic;
+  font-variant: small-caps;
   color: #1d1d1d;
 }
 
@@ -98,7 +102,9 @@
 }
 
 .attack-descriptions {
-  font: 20px/20px cursive;
+  font-size: 20px;
+  line-height: 20px;
+  font-family: Verdana, sans-serif;
   color: #1d1d1d;
   border-bottom: solid;
 }

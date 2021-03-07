@@ -171,7 +171,9 @@ $shadow: 5px 5px 7px grey;
   border-radius: 9999px;
   padding: 10px 8px;
   margin: 2px;
-  font: 12px/0px Verdana, sans-serif;
+  font-size: 12px;
+  line-height: 0px;
+  font-family: Verdana, sans-serif;
 }
 
 .attributes {
