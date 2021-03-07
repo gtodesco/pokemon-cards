@@ -29,7 +29,11 @@ export default {
 }
 </script>
 
-<style scoped>
+<style lang="scss">
+$shadow: 0px 2px 7px grey;
+$border: 1px solid #707070;
+$border-radius: 10px;
+
 .search {
   display: flex;
   height: 3rem;
@@ -38,12 +42,12 @@ export default {
 
 #search-input {
   width: 100%;
-  box-shadow: 0px 2px 7px grey;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  box-shadow: $shadow;
+  border-top-left-radius: $border-radius;
+  border-bottom-left-radius: $border-radius;
   border-right: none;
   padding: 10px;
-  border: 1px solid #707070;
+  border: $border;
 }
 
 #search-input:focus {
@@ -55,11 +59,11 @@ export default {
   width: 5rem;
   color: #ffffff;
   background-color: #ff0000;
-  box-shadow: 0px 2px 7px grey;
-  border-top-right-radius: 10px;
-  border-bottom-right-radius: 10px;
+  box-shadow: $shadow;
+  border-top-right-radius: $border-radius;
+  border-bottom-right-radius: $border-radius;
   border-left: none;
-  border: 1px solid #707070;
+  border: $border;
 }
 
 #search-button:focus {
