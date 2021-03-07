@@ -37,7 +37,7 @@
       </div>
       <div id="attack-card" class="detail-card">
         <h2 class="large-text">Attacks</h2>
-        <div class="attributes attack" v-for="attack in card.attacks" :key="attack">
+        <div class="attributes attack" v-for="attack in card.attacks" :key="attack" @click="showModal(attack)">
           <h5 class="small-text">{{ attack.name }}</h5>
           <h3 class="chip" v-for="cost in attack.cost" :key="cost">
             {{ cost }}
@@ -45,22 +45,44 @@
         </div>
       </div>
     </div>
+    <ModalAttack
+      v-show="isModalVisible"
+      @close="closeModal"
+      :attack="attackSelected"
+    />
   </div>
 </template>
 
 <script>
 import Loader from '../components/Loader'
+import ModalAttack from '../components/ModalAttack'
 import { mapGetters } from 'vuex'
 
 export default {
   name: 'Collection',
   components: {
     Loader,
+    ModalAttack
   },
   computed: mapGetters({
     isLoading: 'isLoading',
     card: 'cardSelected'
   }),
+  data () {
+    return {
+      isModalVisible: false,
+      attackSelected: {},
+    };
+  },
+  methods: {
+    showModal(attack) {
+      this.attackSelected = attack;
+      this.isModalVisible = true;
+    },
+    closeModal() {
+      this.isModalVisible = false;
+    }
+  },
   async mounted() {
     await this.$store.dispatch('searchCardById', this.$route.params.id);
   }
