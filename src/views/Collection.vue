@@ -66,6 +66,7 @@ export default {
 .content {
   display: flex;
   justify-content: center;
+  text-align: center;
 }
 
 .search-container {
@@ -79,7 +80,7 @@ export default {
 }
 
 #text-container {
-  font: italic small-caps 20px/30px Papyrus, fantasy;
+  font: italic small-caps 20px/30px Verdana, sans-serif;
   color: #1d1d1d
 }
 
@@ -107,7 +108,7 @@ export default {
 
 .card-text {
   margin: 2%;
-  font: italic small-caps 20px/30px Papyrus, fantasy;
+  font: italic small-caps 20px/30px Verdana, sans-serif;
 }
 
 @media only screen and (max-width: 768px) {

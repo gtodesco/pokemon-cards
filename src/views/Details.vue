@@ -142,12 +142,12 @@ export default {
 }
 
 .small-text {
-  font: 12px/0px Papyrus, fantasy;
+  font: 12px/0px Verdana, sans-serif;
   color: #1d1d1d;
 }
 
 .large-text {
-  font: italic small-caps 25px/20px Papyrus, fantasy;
+  font: italic small-caps 25px/20px Verdana, sans-serif;
   color: #1d1d1d;
 }
 

@@ -88,7 +88,7 @@
   display: flex;
   border-bottom: solid;
   justify-content: space-between;
-  font: italic small-caps 25px/20px Papyrus, fantasy;
+  font: italic small-caps 25px/20px Verdana, sans-serif;
   color: #1d1d1d;
 }
 
