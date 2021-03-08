@@ -1,21 +1,18 @@
-// For authoring Nightwatch tests, see
-// https://nightwatchjs.org/guide
-
 module.exports = {
-  'default e2e tests': browser => {
+  'step one: search pokemon': browser => {
     browser
       .init()
-      .waitForElementVisible('#app')
-      .assert.elementPresent('.hello')
-      .assert.containsText('h1', 'Welcome to Your Vue.js App')
-      .assert.elementCount('img', 1)
-      .end()
+      .url('https://master.d3quxxvpz3xw5s.amplifyapp.com/')
+      .waitForElementVisible('body', 15000)
+      .setValue('#search-input', 'dark')
+      .click('#search-button')
   },
 
-  'example e2e test using a custom command': browser => {
+  'step two: test modal': browser => {
     browser
-      .openHomepage()
-      .assert.elementPresent('.hello')
+      .click('.card')
+      .click('.attack')
+      .assert.visible('.modal')
       .end()
   }
 }
