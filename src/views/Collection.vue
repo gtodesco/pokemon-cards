@@ -7,7 +7,7 @@
       <article>
         <h1>Welcome to Pokestore!</h1>
         <p>Search for a Pokémon in the input above.</p>
-        <h5>{{ translate_test }}</h5>
+        <h5>{{ $t('CODES.internacionalization_test') }}</h5>
       </article>
     </div>
     <div id="loader-container" class="page-container" v-show="isLoading">
@@ -49,19 +49,8 @@ export default {
     hasCards: 'hasCards',
     isLoading: 'isLoading'
   }),
-  props: {
-    translate_test: {
-      type: String,
-      default: () => {
-        return '';
-      },
-    },
-  },
   data () {
     return {}
-  },
-  mounted() {
-    this.translate_test = this.$t('CODES.internacionalization_test');
   },
   methods: {
     goToDetails(id) {
