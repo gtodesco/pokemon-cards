@@ -1,29 +1,30 @@
-# pokemon-cards
+# Pokestore
+#### Seja bem-vindo! Encontre seu Pokémon favorito aqui:
+Demo: [https://master.d3quxxvpz3xw5s.amplifyapp.com//](https://master.d3quxxvpz3xw5s.amplifyapp.com/)
 
-## Project setup
-```
-yarn install
-```
+#### 1) Clonar e instalar dependências
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+- 1.1) Clona `https://github.com/gtodesco/pokemon-cards`.
+- 1.2) Instale os pacotes NPM com `npm install` ou `yarn install`.
 
-### Compiles and minifies for production
-```
-yarn build
-```
+#### 2) Start e testes
 
-### Run your unit tests
-```
-yarn test:unit
-```
+- 2.1) Rode `yarn run serve` para iniciar a aplicação em um servidor local.
+- 2.2) Rode `yarn run test:unit` para rodar o teste unitário.
+-- O teste unitário verifica a alteração de valor de propriedade da modal de ataque do Pokémon.   
+- 2.3) Rode `yarn run test:e2e` para rodar o teste e2e.
+-- O teste e2e verifica o caminho em tela até o aparecimento da modal de ataque, passando pelas seguintes etapas: Acesso ao site -> pesquisa por Pokémon -> seleção de Pokémon -> seleção de ataque -> verifica surgimento da modal.
 
-### Run your end-to-end tests
-```
-yarn test:e2e
-```
+Tecnologias
+============
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+- Internacionalização (vista na primeira página, no texto "Internacionalização", logo abaixo das boas-vindas)
+- Sass
+- Vuex
+- Vue router
+- PWA (possível instalar no computador ou celular adicionando o app à tela inicial)
+
+Autor
+============
+
+[Gabriel Todesco](https://www.linkedin.com/in/gabriel-jensen-todesco/)
